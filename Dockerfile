@@ -4,6 +4,7 @@ MAINTAINER elias.kotlyar@gmail.com
 
 RUN echo 'phpmyadmin phpmyadmin/dbconfig-install boolean false' | debconf-set-selections
 RUN echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf-set-selections
+RUN apt-get update && apt-get install -y tzdata
 
 RUN apt-get update && \
     apt-get install -y \
